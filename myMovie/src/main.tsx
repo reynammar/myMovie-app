@@ -1,11 +1,15 @@
-import { StrictMode } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
-import { RouterProvider } from "react-router";
-import { router } from "./routers/Router";
+import MainLayout from "./components/templates/MainLayout";
+import MainPage from "./pages/MainPage";
 import "./index.css";
+import "swiper/swiper-bundle.css";
+
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+  <React.StrictMode>
+    <MainLayout>
+      <MainPage />
+    </MainLayout>
+  </React.StrictMode>
 );

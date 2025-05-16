@@ -12,7 +12,7 @@ const Button = ({ onClick, children, className = "", type = "button" }: ButtonPr
     <button
       onClick={onClick}
       type={type}
-      className={`px-6 py-2 font-bold text-base rounded bg-[#0d0907] text-red-500 hover:bg-[#241010] transition ${className}`}
+      className={`px-6 py-2 font-bold text-base rounded ${className}`}
     >
       {children}
     </button>

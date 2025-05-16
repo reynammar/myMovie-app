@@ -1,18 +1,33 @@
-import { Link } from "react-router";
-
 interface NavLinkProps {
   label: string;
-  to: string;
+  targetId: string;
 }
 
-const NavLink = ({ label, to }: NavLinkProps) => {
+const NavLink = ({ label, targetId }: NavLinkProps) => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Link
-      to={to}
-      className="text-black font-semibold text-base hover:text-gray-500 transition-colors duration-300 tracking-wide"
+    <a
+      href={`#${targetId}`}
+      onClick={handleClick}
+      className="
+        cursor-pointer 
+        text-black 
+        font-semibold 
+        border-t-4 border-transparent
+        hover:border-indigo-600 
+        transition
+        pt-2
+      "
     >
       {label}
-    </Link>
+    </a>
   );
 };
 
