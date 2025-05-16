@@ -1,6 +1,6 @@
 import Home from "./Home"
-import About from "./Favorite"
 import Movies from "./Movies"
+import Favorite from "./Favorite";
 
 const MainPage = () => {
   return (
@@ -9,12 +9,12 @@ const MainPage = () => {
         <Home/>
       </section>
 
-      <section id="about" className="min-h-screen p-4">
-        <About/>
+      <section id="favorite" className="min-h-screen p-4">
+        <Movies/>
       </section>
 
       <section id="movies" className="min-h-screen p-4">
-        <Movies/>
+        <Favorite/> 
       </section>
     </div>
   );
