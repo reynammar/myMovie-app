@@ -1,16 +1,22 @@
 import NavLink from "../atoms/NavLink";
+import { Home, Film, Star } from "lucide-react";  // import icon lucide
 
 const navMenus = [
-  { label: "Home", targetId: "home" },
-  { label: "About", targetId: "about" },
-  { label: "Movies", targetId: "movies" },
+  { label: "Home", targetId: "home", icon: Home },
+  { label: "Movies", targetId: "movies", icon: Film },
+  { label: "Favorite", targetId: "favorite", icon: Star },
 ];
 
 const NavMenu = () => {
   return (
-    <div className="flex space-x-6">
+    <div className="flex space-x-10">
       {navMenus.map((menu) => (
-        <NavLink key={menu.targetId} label={menu.label} targetId={menu.targetId} />
+        <NavLink
+          key={menu.targetId}
+          label={menu.label}
+          targetId={menu.targetId}
+          icon={menu.icon}
+        />
       ))}
     </div>
   );
